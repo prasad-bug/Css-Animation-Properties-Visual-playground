@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        animation: colorChange 4s;
+    }
+
+    @keyframes colorChange {
+        from {
+            background-color: red;
+        }
+
+        to {
+            background-color: bisque;
+        }
+    }
+
+    .multi {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        animation: moveColor 5s forwards;
+    }
+
+    @keyframes moveColor {
+        0% {
+            left: 0;
+            background-color: red;
+        }
+
+        25% {
+            left: 50px;
+            background-color: blue;
+        }
+
+        50% {
+            left: 100px;
+            background-color: aquamarine;
+        }
+
+        100% {
+            left: 200px;
+            background-color: hotpink;
+        }
+    }
+
+    .pulse {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: blue;
+        animation: pulseAim 2s infinite alternate;
+        justify-content: center;
+    }
+
+    @keyframes pulseAim {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.5);
+        }
+    }
+
+    
+
+</style>
+
+<body>
+    <div class="box"> </div> <br>
+
+    <div class="multi"></div> <br>
+
+    <div class="pulse"></div> <br>
+
+   
+</body>
+
+</html>
