@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Practise</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: slideRight 2s reverse infinite;
+            animation-duration: 2s;
+            animation-name: slideRight;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(180px);
+            }
+        }
+
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: royalblue;
+            border-radius: 50%;
+            animation: ChangeColor 2s infinite;
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
+
+        }
+
+        @keyframes ChangeColor {
+            0% {
+                background: royalblue;
+            }
+
+            50% {
+                background: red;
+            }
+
+            100% {
+                background: rgb(215, 57, 218);
+            }
+        }
+
+        .bounce {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: relative;
+            border-radius: 50%;
+            animation: bounce 2s alternate;
+            animation-iteration-count: 6;
+        }
+
+        @keyframes bounce {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+        .mover {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: relative;
+
+            animation: move 2s alternate infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes move {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: box1s 2s alternate infinite;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+
+        }
+
+        @keyframes box1s {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative;
+            animation: box2s 2s alternate infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-in;
+        }
+
+
+        @keyframes box2s {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            position: relative;
+            animation: box3s 2s alternate infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes box3s {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background: rgb(180, 31, 172);
+            position: relative;
+            animation: box4s 2s alternate infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes box4s {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px;
+            }
+        }
+
+        .box-grow {
+            width: 100px;
+            height: 100px;
+            background: rgb(250, 246, 0);
+            position: relative;
+            animation: grow 2s alternate infinite;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes grow {
+            0% {
+                width: 100px;
+                height: 100px;
+            }
+
+            100% {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .box-old {
+            width: 100px;
+            height: 100px;
+            background: teal;
+            position: relative;
+            animation: old 2s alternate infinite;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes old {
+            0% {
+                width: 200px;
+                height: 200px;
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .pauser {
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+        position: relative;
+        animation: slide 2s infinite alternate;
+        animation-play-state: running; /* Default state */
+    }
+
+    @keyframes slide {
+        0% { left: 0; }
+        100% { left: 200px; }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="circle"></div>
+    <div class="bounce"></div>
+    <div class="mover"></div>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+
+    <div class="box-grow"></div>
+    <div class="box-old"></div>
+
+    <div class="pauser" id="animateBox"></div>
+<button onclick="togglePlay()">Pause/Play</button>
+ 
+<script>
+    function togglePlay() {
+        const box = document.getElementById("animateBox");
+        const currentState = getComputedStyle(box).animationPlayState;
+        box.style.animationPlayState = currentState === "running" ? "paused" : "running";
+    }
+</script>
+
+
+
+</body>
+
+</html>
